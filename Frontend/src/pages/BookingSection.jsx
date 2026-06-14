@@ -35,7 +35,7 @@ const BookingSection = () => {
       setMessage("");
 
     } catch (error) {
-      console.log(error);
+      console.log("error", error);
       alert("Something went wrong");
     }
   };

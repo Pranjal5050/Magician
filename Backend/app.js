@@ -1,18 +1,17 @@
-const cors = require('cors');
-require('dotenv').config();
-const express = require('express');
+const express = require("express");
 const app = express();
-const connectDB = require('./db/db');
+const dotenv = require("dotenv");
+dotenv.config();
+const connectDB = require("./db/db");
 connectDB();
+const cors = require("cors");
+app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-const userRoute = require('./routes/user.route');
+const bookingRoute = require("./routes/booking.route");
+const adminLogin = require("./routes/admin.route");
 
-app.use('/api/users', userRoute);
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+app.use("/api", bookingRoute);
+app.use("/admin", adminLogin);
 
 module.exports = app;

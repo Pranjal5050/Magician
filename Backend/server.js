@@ -1,9 +1,9 @@
-const express = require('express');
-const server = express.Router();
-const app = require('./app');
+const http = require("http");
+const app = require("./app");
+const PORT = process.env.PORT || 3000;
 
-const PORT = process.env.PORT || 5000;
+const server = http.createServer(app);
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+server.listen(PORT, ()=>{
+    console.log(`server running on port ${PORT}`);
+})

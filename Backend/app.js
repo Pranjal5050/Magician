@@ -5,6 +5,10 @@ dotenv.config();
 const connectDB = require("./db/db");
 connectDB();
 const cors = require("cors");
+
+app.get("/", (req, res) => {
+  res.send("Backend Working");
+});
 app.use(
     cors({
         origin: [

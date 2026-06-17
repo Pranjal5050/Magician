@@ -25,6 +25,42 @@ const createBooking = async (req, res) => {
             });
         }
 
+        const emailRegex =
+            /^[a-zA-Z0-9._%+-]+@(gmail|yahoo|outlook|hotmail)\.(com|in)$/i;
+
+        if (!emailRegex.test(email)) {
+            return res.status(400).json({
+                success: false,
+                message:
+                    "Please enter a valid Gmail, Yahoo, Outlook or Hotmail email",
+            });
+        }
+
+        const phoneRegex = /^[0-9]{10,15}$/;
+
+        if (!phoneRegex.test(phonenumber)) {
+            return res.status(400).json({
+                success: false,
+                message: "Please enter a valid phone number",
+            });
+        }
+
+        const selectedDate = new Date(eventdate);
+        const today = new Date();
+
+        today.setHours(0, 0, 0, 0);
+
+        if (selectedDate < today) {
+            return res.status(400).json({
+                success: false,
+                message: "Event date cannot be in the past",
+            });
+        }
+
+
+
+
+
         const booking = await Booking.create({
             fullname,
             email,
@@ -64,18 +100,18 @@ const getAllBookings = async (req, res) => {
 };
 
 const updateBookingStatus = async (req, res) => {
-  const booking = await Booking.findByIdAndUpdate(
-    req.params.id,
-    {
-      status: req.body.status,
-    },
-    { new: true }
-  );
+    const booking = await Booking.findByIdAndUpdate(
+        req.params.id,
+        {
+            status: req.body.status,
+        },
+        { new: true }
+    );
 
-  res.json({
-    success: true,
-    booking,
-  });
+    res.json({
+        success: true,
+        booking,
+    });
 };
 
 module.exports = {

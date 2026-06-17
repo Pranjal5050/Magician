@@ -12,8 +12,27 @@ const BookingSection = () => {
   const onSubmitHandaler = async (e) => {
     e.preventDefault();
 
+    const emailRegex =
+      /^[a-zA-Z0-9._%+-]+@(gmail|yahoo|outlook|hotmail)\.(com|in)$/i;
+
+    const phoneRegex = /^[0-9]{10,15}$/;
+
+    if (!fullname.trim()) {
+      return alert("Please enter your full name");
+    }
+
+    if (!emailRegex.test(email)) {
+      return alert(
+        "Please enter a valid Gmail"
+      );
+    }
+
+    if (!phoneRegex.test(phonenumber)) {
+      return alert("Please enter a valid phone number");
+    }
+
     try {
-      const response = await axios.post(
+      await axios.post(
         "http://localhost:5000/api/booking",
         {
           fullname,
@@ -33,12 +52,42 @@ const BookingSection = () => {
       setEventdate("");
       setEventlocation("");
       setMessage("");
-
     } catch (error) {
-      console.log("error", error);
+      console.log(error);
       alert("Something went wrong");
     }
   };
+
+  // const onSubmitHandaler = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:5000/api/booking",
+  //       {
+  //         fullname,
+  //         email,
+  //         phonenumber,
+  //         eventdate,
+  //         eventlocation,
+  //         message,
+  //       }
+  //     );
+
+  //     alert("Booking Submitted Successfully");
+
+  //     setFullname("");
+  //     Setemail("");
+  //     setPhonenumber("");
+  //     setEventdate("");
+  //     setEventlocation("");
+  //     setMessage("");
+
+  //   } catch (error) {
+  //     console.log("error", error);
+  //     alert("Something went wrong");
+  //   }
+  // };
   return (
     <section className="w-full bg-[#07101f] py-16 px-4" id="booking">
       <div className="max-w-7xl mx-auto">

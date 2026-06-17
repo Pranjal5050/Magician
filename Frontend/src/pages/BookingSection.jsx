@@ -3,6 +3,7 @@ import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const BookingSection = () => {
+  
   const [fullname, setFullname] = useState("");
   const [email, Setemail] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
@@ -11,6 +12,7 @@ const BookingSection = () => {
   const [message, setMessage] = useState("");
 
   const onSubmitHandaler = async (e) => {
+console.log("API URL:", import.meta.env.VITE_API_URL);
     e.preventDefault();
 
     const emailRegex =

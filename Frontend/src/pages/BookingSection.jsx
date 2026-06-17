@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const BookingSection = () => {
   const [fullname, setFullname] = useState("");
@@ -33,7 +34,7 @@ const BookingSection = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/booking",
+        `${API_URL}/api/booking`,
         {
           fullname,
           email,
@@ -58,36 +59,6 @@ const BookingSection = () => {
     }
   };
 
-  // const onSubmitHandaler = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const response = await axios.post(
-  //       "http://localhost:5000/api/booking",
-  //       {
-  //         fullname,
-  //         email,
-  //         phonenumber,
-  //         eventdate,
-  //         eventlocation,
-  //         message,
-  //       }
-  //     );
-
-  //     alert("Booking Submitted Successfully");
-
-  //     setFullname("");
-  //     Setemail("");
-  //     setPhonenumber("");
-  //     setEventdate("");
-  //     setEventlocation("");
-  //     setMessage("");
-
-  //   } catch (error) {
-  //     console.log("error", error);
-  //     alert("Something went wrong");
-  //   }
-  // };
   return (
     <section className="w-full bg-[#07101f] py-16 px-4" id="booking">
       <div className="max-w-7xl mx-auto">

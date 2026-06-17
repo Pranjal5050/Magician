@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const AdminBookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -8,7 +9,7 @@ const AdminBookings = () => {
     try {
     const token = localStorage.getItem("adminToken");
       const { data } = await axios.get(
-        "http://localhost:5000/api/admin/bookings",
+        `${API_URL}/api/admin/bookings`,
         {
         headers:{
           Authorization: token,
@@ -28,7 +29,7 @@ const AdminBookings = () => {
   const updateStatus = async (id, status) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/api/admin/booking/${id}`,
+        `${API_URL}/api/admin/booking/${id}`,
         {
           status,
         }

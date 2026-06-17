@@ -57,10 +57,6 @@ const createBooking = async (req, res) => {
             });
         }
 
-
-
-
-
         const booking = await Booking.create({
             fullname,
             email,

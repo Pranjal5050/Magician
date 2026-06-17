@@ -7,7 +7,11 @@ connectDB();
 const cors = require("cors");
 app.use(
     cors({
-        origin: "https://magicianwebdevapp.netlify.app/",
+        origin: [
+            "https://magicianwebdevapp.netlify.app",
+            "http://localhost:5173"
+        ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
     })
 );

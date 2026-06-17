@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 const API_URL = import.meta.env.VITE_API_URL;
 
+console.log("API_URL =", API_URL);
+
 const AdminLogin = () => {
   const navigate = useNavigate();
 

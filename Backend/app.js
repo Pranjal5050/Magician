@@ -5,7 +5,12 @@ dotenv.config();
 const connectDB = require("./db/db");
 connectDB();
 const cors = require("cors");
-app.use(cors());
+app.use(
+    cors({
+        origin: "https://magicianwebdevapp.netlify.app/",
+        credentials: true,
+    })
+);
 app.use(express.json());
 
 const bookingRoute = require("./routes/booking.route");

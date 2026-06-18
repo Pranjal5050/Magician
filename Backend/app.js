@@ -7,7 +7,7 @@ connectDB();
 const cors = require("cors");
 
 app.get("/", (req, res) => {
-  res.send("Backend Working");
+    res.send("Backend Working");
 });
 app.use(
     cors({
@@ -15,7 +15,7 @@ app.use(
             "https://magicianwebdevapp.netlify.app",
             "http://localhost:5173"
         ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+        methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
     })
 );

@@ -7,6 +7,8 @@ import Home from './pages/Home'
 import AdminBookings from './pages/AdminBookings';
 import AdminLogin from './pages/AdminLogin';
 import AdminRoute from "./components/AdminRoute";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -39,6 +41,15 @@ const App = () => {
         } />
         <Route path="/admin/login" element={<AdminLogin />} />
       </Routes>
+      <>
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          theme="dark"
+          newestOnTop
+          pauseOnHover
+        />
+      </>
     </div>
   )
 }

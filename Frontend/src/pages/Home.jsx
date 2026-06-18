@@ -49,7 +49,7 @@ const Home = () => {
 
         {/* First Image */}
         <img
-          src="https://framerusercontent.com/images/ghrFDyH9JqJJ5DSVZE3N6tfo7G4.jpg?width=1440&height=812"
+          src="../public/hero.png"
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -60,7 +60,7 @@ const Home = () => {
           className="absolute inset-0 z-10"
         >
           <img
-            src="https://framerusercontent.com/images/bhI0I3NScpYgODRj6qpFWQC6rHk.png?width=1440&height=823"
+            src="../public/hero2.png"
             alt=""
             className="w-full h-full object-cover"
           />

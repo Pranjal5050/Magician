@@ -16,7 +16,7 @@ const Footer = () => {
 
           {/* Logo */}
           <img
-            src="https://framerusercontent.com/images/GlqM6AoMGbWulb3VmK5nMQstOpg.png?width=364&height=368"
+            src="../public/logo.png"
             alt="Magicalmost"
             className="w-40 md:w-48 mb-8"
           />

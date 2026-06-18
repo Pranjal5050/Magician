@@ -4,7 +4,7 @@ const services = [
   {
     title: "Signature Cello Floating Girl",
     image:
-      "https://media.istockphoto.com/id/912003020/photo/magician-or-illusionist-is-showing-magic-trick-blue-stage-light-in-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=8wtOhy_2Cj61I4CmxoKiY1ukbW8ZVAcDA-aRap8MgiQ=",
+      "../public/img1.png",
     desc: `Magicalmost had the great honor of performing the breathtaking illusion "The Cello Floating Girl" before Tony Hassini, President of the International Magicians Society.
 
 Created and designed exclusively by Magicalmost, this masterpiece blends music, magic, and elegance into one unforgettable performance. As the cello begins to play, a girl gracefully rises into the air floating in harmony with every note, leaving audiences spellbound by the mystery and beauty of the moment.`,
@@ -13,22 +13,24 @@ Created and designed exclusively by Magicalmost, this masterpiece blends music, 
   {
     title: "Laser Man Show",
     image:
-      "https://media.istockphoto.com/id/1007193976/photo/magician-doing-trick-with-doves.webp?a=1&b=1&s=612x612&w=0&k=20&c=vMRK9WCwGcfxn9LR3JDuZqAPygDQaBuigSMdinbFTMg=",
-    desc: `An extraordinary fusion of light, technology and illusion. Our Laser Man Show creates unforgettable moments with futuristic visual effects, synchronized choreography and stunning performances perfect for luxury events and corporate productions.`,
+      "../public/img2.png",
+    desc: `An extraordinary fusion of light, technology and illusion. Our Laser Man Show creates unforgettable moments with futuristic visual effects, synchronized choreography and stunning performances perfect for luxury events and corporate productions.
+    An extraordinary fusion of light, technology and illusion. Our Laser Man Show creates unforgettable moments with futuristic visual effects, synchronized choreography and stunning performances perfect for luxury events and corporate productions.`,
   },
 
   {
     title: "Magician & Mentalist",
     image:
-      "https://images.unsplash.com/photo-1615961943966-ab7585d5bf4e?w=1200&auto=format&fit=crop&q=80",
+      "../public/img3.png",
     desc: `Award-winning magical entertainment designed for elite weddings, luxury events and corporate experiences. Combining psychology, illusion and showmanship to leave audiences amazed.`,
   },
 
   {
     title: "Award Winning Magician",
     image:
-      "https://images.unsplash.com/photo-1618590067592-a867d8b44403?w=1200&auto=format&fit=crop&q=80",
-    desc: `With years of experience performing for prestigious clients across the UAE, our performances blend elegance, innovation and wonder. Every show is customized to create unforgettable memories for your guests.`,
+      "../public/img4.png",
+    desc: `With years of experience performing for prestigious clients across the UAE, our performances blend elegance, innovation and wonder. Every show is customized to create unforgettable memories for your guests.
+    An extraordinary fusion of light, technology and illusion. Our Laser Man Show creates unforgettable moments with futuristic visual effects, synchronized choreography and stunning performances perfect for luxury events and corporate productions.`,
   },
 ];
 
@@ -71,8 +73,8 @@ const Services = () => {
           <div
             key={index}
             className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center mb-24 ${index % 2 !== 0
-                ? "lg:[&>*:first-child]:order-2"
-                : ""
+              ? "lg:[&>*:first-child]:order-2"
+              : ""
               }`}
           >
             {/* Image */}
@@ -101,13 +103,7 @@ const Services = () => {
 
         {/* Bottom Video */}
         <div className="mt-16">
-          <video
-            autoPlay
-            muted
-            playsInline
-            className="w-full mb-10 rounded-3xl border border-[#ECD78720] shadow-xl"
-            src="/magic.mp4"
-          />
+          <img src="../public/hero3.png" alt="" />
         </div>
 
       </div>

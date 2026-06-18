@@ -24,8 +24,8 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center justify-center">
             <img
-              className="h-16 md:h-30 object-contain"
-              src="https://framerusercontent.com/images/GlqM6AoMGbWulb3VmK5nMQstOpg.png?width=364&height=368"
+              className="h-20 md:h-50 object-cover"
+              src="../public/logo.png"
               alt="logo"
             />
           </div>

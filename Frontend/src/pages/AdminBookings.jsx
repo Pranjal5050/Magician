@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL;
+import { toast } from "react-toastify";
 
 const AdminBookings = () => {
   const [bookings, setBookings] = useState([]);
 
   const fetchBookings = async () => {
     try {
-    const token = localStorage.getItem("adminToken");
+      const token = localStorage.getItem("adminToken");
       const { data } = await axios.get(
         `${API_URL}/api/admin/bookings`,
         {
-        headers:{
-          Authorization: token,
-        },
-      }
+          headers: {
+            Authorization: token,
+          },
+        }
       );
       setBookings(data.bookings);
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong");
     }
   };
 
@@ -37,10 +38,9 @@ const AdminBookings = () => {
 
       fetchBookings();
 
-      alert(`Booking ${status}`);
+      toast.success(`Booking ${status}`);
     } catch (error) {
-      console.log(error);
-      alert("Something went wrong");
+      toast.error("Something went wrong");
     }
   };
 
@@ -145,10 +145,10 @@ const AdminBookings = () => {
                 <div>
                   <span
                     className={`px-4 py-2 rounded-full text-sm font-semibold ${booking.status === "Approved"
-                        ? "bg-green-500/20 text-green-400"
-                        : booking.status === "Rejected"
-                          ? "bg-red-500/20 text-red-400"
-                          : "bg-yellow-500/20 text-yellow-400"
+                      ? "bg-green-500/20 text-green-400"
+                      : booking.status === "Rejected"
+                        ? "bg-red-500/20 text-red-400"
+                        : "bg-yellow-500/20 text-yellow-400"
                       }`}
                   >
                     {booking.status}

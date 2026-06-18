@@ -9,27 +9,27 @@ import "swiper/css/effect-coverflow";
 const slides = [
   {
     image:
-      "https://framerusercontent.com/images/p7yb6iyO1LXnx3fWgfvQ8OEYYIk.png?scale-down-to=1024&width=1488&height=1952",
+      "../public/slider1.png",
     title: "Stage Performance",
   },
   {
     image:
-      "https://framerusercontent.com/images/KewWmE19wAubzRaYYa4mZcC1U.png?scale-down-to=1024&width=1488&height=1952",
+      "../public/slider2.png",
     title: "Mentalist Show",
   },
   {
     image:
-      "https://framerusercontent.com/images/SEDuRiqcxYjmDna6eMUKJeFUY.png?scale-down-to=1024&width=1488&height=1952",
+      "../public/slider3.png",
     title: "Close Up Magic",
   },
   {
     image:
-      "https://framerusercontent.com/images/bUYE81otnCaw9GmRsHlG4ZwomU.png?scale-down-to=1024&width=1488&height=1952",
+      "../public/slider4.png",
     title: "Award Winning",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000",
+      "../public/slider5.png",
     title: "Corporate Events",
   },
 ];

@@ -2,8 +2,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 const API_URL = import.meta.env.VITE_API_URL;
-
-console.log("API_URL =", API_URL);
+import { toast } from "react-toastify";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -12,7 +11,6 @@ const AdminLogin = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Already logged in admin ko dashboard par bhejo
   useEffect(() => {
     const token = localStorage.getItem("adminToken");
 
@@ -37,13 +35,13 @@ const AdminLogin = () => {
 
       localStorage.setItem("adminToken", data.token);
 
-      alert("Login Successful");
+      toast.success("Login Successful");
 
       navigate("/admin/bookings");
     } catch (error) {
-      alert(
+      toast.error(
         error?.response?.data?.message ||
-          "Invalid Credentials"
+        "Invalid Credentials"
       );
     } finally {
       setLoading(false);

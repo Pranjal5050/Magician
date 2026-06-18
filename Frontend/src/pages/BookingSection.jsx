@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL;
+import { toast } from "react-toastify";
 
 const BookingSection = () => {
 
@@ -20,17 +21,15 @@ const BookingSection = () => {
     const phoneRegex = /^[0-9]{10,15}$/;
 
     if (!fullname.trim()) {
-      return alert("Please enter your full name");
+      return toast.error("Please enter your full name");
     }
 
     if (!emailRegex.test(email)) {
-      return alert(
-        "Please enter a valid Gmail"
-      );
+      return toast.error("Please enter valid email");
     }
 
     if (!phoneRegex.test(phonenumber)) {
-      return alert("Please enter a valid phone number");
+      return toast.error("Please enter a valid phone number");
     }
 
     try {
@@ -46,7 +45,7 @@ const BookingSection = () => {
         }
       );
 
-      alert("Booking Submitted Successfully");
+      toast.success("Booking Submitted Successfully");
 
       setFullname("");
       Setemail("");
@@ -55,8 +54,7 @@ const BookingSection = () => {
       setEventlocation("");
       setMessage("");
     } catch (error) {
-      console.log(error);
-      alert("Something went wrong");
+      toast.error("Something went wrong");
     }
   };
 

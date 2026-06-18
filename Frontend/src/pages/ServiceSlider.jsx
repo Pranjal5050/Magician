@@ -9,27 +9,27 @@ import "swiper/css/effect-coverflow";
 const slides = [
   {
     image:
-      "../public/slider1.png",
+      "/slider1.png",
     title: "Stage Performance",
   },
   {
     image:
-      "../public/slider2.png",
+      "/slider2.png",
     title: "Mentalist Show",
   },
   {
     image:
-      "../public/slider3.png",
+      "/slider3.png",
     title: "Close Up Magic",
   },
   {
     image:
-      "../public/slider4.png",
+      "/slider4.png",
     title: "Award Winning",
   },
   {
     image:
-      "../public/slider5.png",
+      "/slider5.png",
     title: "Corporate Events",
   },
 ];

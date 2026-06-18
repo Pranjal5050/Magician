@@ -16,7 +16,7 @@ const Footer = () => {
 
           {/* Logo */}
           <img
-            src="../public/logo.png"
+            src="/logo.png"
             alt="Magicalmost"
             className="w-40 md:w-48 mb-8"
           />

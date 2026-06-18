@@ -4,7 +4,7 @@ const services = [
   {
     title: "Signature Cello Floating Girl",
     image:
-      "../public/img1.png",
+      "/img1.png",
     desc: `Magicalmost had the great honor of performing the breathtaking illusion "The Cello Floating Girl" before Tony Hassini, President of the International Magicians Society.
 
 Created and designed exclusively by Magicalmost, this masterpiece blends music, magic, and elegance into one unforgettable performance. As the cello begins to play, a girl gracefully rises into the air floating in harmony with every note, leaving audiences spellbound by the mystery and beauty of the moment.`,
@@ -13,7 +13,7 @@ Created and designed exclusively by Magicalmost, this masterpiece blends music, 
   {
     title: "Laser Man Show",
     image:
-      "../public/img2.png",
+      "/img2.png",
     desc: `An extraordinary fusion of light, technology and illusion. Our Laser Man Show creates unforgettable moments with futuristic visual effects, synchronized choreography and stunning performances perfect for luxury events and corporate productions.
     An extraordinary fusion of light, technology and illusion. Our Laser Man Show creates unforgettable moments with futuristic visual effects, synchronized choreography and stunning performances perfect for luxury events and corporate productions.`,
   },
@@ -21,14 +21,14 @@ Created and designed exclusively by Magicalmost, this masterpiece blends music, 
   {
     title: "Magician & Mentalist",
     image:
-      "../public/img3.png",
+      "/img3.png",
     desc: `Award-winning magical entertainment designed for elite weddings, luxury events and corporate experiences. Combining psychology, illusion and showmanship to leave audiences amazed.`,
   },
 
   {
     title: "Award Winning Magician",
     image:
-      "../public/img4.png",
+      "/img4.png",
     desc: `With years of experience performing for prestigious clients across the UAE, our performances blend elegance, innovation and wonder. Every show is customized to create unforgettable memories for your guests.
     An extraordinary fusion of light, technology and illusion. Our Laser Man Show creates unforgettable moments with futuristic visual effects, synchronized choreography and stunning performances perfect for luxury events and corporate productions.`,
   },

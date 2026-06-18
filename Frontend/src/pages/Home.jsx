@@ -49,7 +49,7 @@ const Home = () => {
 
         {/* First Image */}
         <img
-          src="../public/hero.png"
+          src="/hero.png"
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -60,7 +60,7 @@ const Home = () => {
           className="absolute inset-0 z-10"
         >
           <img
-            src="../public/hero2.png"
+            src="/hero2.png"
             alt=""
             className="w-full h-full object-cover"
           />

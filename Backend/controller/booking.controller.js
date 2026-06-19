@@ -69,7 +69,7 @@ const createBooking = async (req, res) => {
 
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
-            to: process.env.ADMIN_EMAIL,
+            to: process.env.CLIENT_EMAIL,
 
             subject: "New Magic Show Booking",
 

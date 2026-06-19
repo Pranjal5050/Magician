@@ -67,13 +67,15 @@ const createBooking = async (req, res) => {
             message,
         });
 
-        await transporter.sendMail({
-            from: process.env.EMAIL_USER,
-            to: process.env.CLIENT_EMAIL,
 
-            subject: "New Magic Show Booking",
+        try {
+            await transporter.sendMail({
+                from: process.env.EMAIL_USER,
+                to: process.env.CLIENT_EMAIL,
 
-            html: `
+                subject: "New Magic Show Booking",
+
+                html: `
     <h2>New Booking Received</h2>
 
     <p><strong>Name:</strong> ${fullname}</p>
@@ -85,15 +87,15 @@ const createBooking = async (req, res) => {
     <p><strong>Message:</strong></p>
     <p>${message}</p>
   `,
-        });
+            });
 
-        await transporter.sendMail({
-            from: process.env.EMAIL_USER,
-            to: email,
+            await transporter.sendMail({
+                from: process.env.EMAIL_USER,
+                to: email,
 
-            subject: "Booking Confirmation",
+                subject: "Booking Confirmation",
 
-            html: `
+                html: `
     <div style="font-family: Arial, sans-serif;">
       <h2>Thank You For Booking Magicalmost</h2>
 
@@ -109,7 +111,10 @@ const createBooking = async (req, res) => {
       <p>Magicalmost Team</p>
     </div>
   `,
-        });
+            });
+        } catch (mailError) {
+            console.log("MAIL ERROR:", mailError.message);
+        }
 
         res.status(201).json({
             success: true,

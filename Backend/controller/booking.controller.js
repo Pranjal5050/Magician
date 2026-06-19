@@ -79,7 +79,7 @@ const createBooking = async (req, res) => {
       console.log("Before Admin Mail");
 
       await transporter.sendMail({
-        from: process.env.EMAIL_USER,
+        from: "Magicalmost <pranjalsharma9143@gmail.com>",
         to: process.env.CLIENT_EMAIL,
         subject: "New Magic Show Booking",
         html: `
@@ -99,7 +99,7 @@ const createBooking = async (req, res) => {
       console.log("After Admin Mail");
 
       await transporter.sendMail({
-        from: process.env.EMAIL_USER,
+        from: "Magicalmost <pranjalsharma9143@gmail.com>",
         to: email,
         subject: "Booking Confirmation",
         html: `

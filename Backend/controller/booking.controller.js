@@ -1,4 +1,5 @@
 const Booking = require("../models/booking.model");
+const transporter = require("../services/mail.service");
 
 const createBooking = async (req, res) => {
     try {
@@ -64,6 +65,50 @@ const createBooking = async (req, res) => {
             eventdate,
             eventlocation,
             message,
+        });
+
+        await transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: process.env.ADMIN_EMAIL,
+
+            subject: "New Magic Show Booking",
+
+            html: `
+    <h2>New Booking Received</h2>
+
+    <p><strong>Name:</strong> ${fullname}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Phone:</strong> ${phonenumber}</p>
+    <p><strong>Event Date:</strong> ${eventdate}</p>
+    <p><strong>Location:</strong> ${eventlocation}</p>
+
+    <p><strong>Message:</strong></p>
+    <p>${message}</p>
+  `,
+        });
+
+        await transporter.sendMail({
+            from: process.env.EMAIL_USER,
+            to: email,
+
+            subject: "Booking Confirmation",
+
+            html: `
+    <div style="font-family: Arial, sans-serif;">
+      <h2>Thank You For Booking Magicalmost</h2>
+
+      <p>Hello ${fullname},</p>
+
+      <p>We have received your booking request successfully.</p>
+
+      <p>Our team will contact you shortly regarding your event.</p>
+
+      <br>
+
+      <p>Regards,</p>
+      <p>Magicalmost Team</p>
+    </div>
+  `,
         });
 
         res.status(201).json({

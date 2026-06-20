@@ -52,7 +52,7 @@ const About = () => {
             <img
               src="https://images.unsplash.com/photo-1615456759361-45a6e6d6d197?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D"
               alt=""
-              className="w-full rounded-md object-cover shadow-2xl"
+              className="w-full rounded-md shadow-2xl height-[600px]"
             />
           </div>
 

@@ -103,7 +103,7 @@ const ServiceSlider = () => {
                   <img
                     src={slide.image}
                     alt={slide.title}
-                    className="w-full h-[420px] md:h-[560px] object-cover transition duration-700 group-hover:scale-105"
+                    className="w-full h-[420px] md:h-[560px] transition duration-700 group-hover:scale-105"
                   />
                 </div>
 

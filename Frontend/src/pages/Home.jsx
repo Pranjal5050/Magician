@@ -51,7 +51,7 @@ const Home = () => {
         <img
           src="/hero.png"
           alt=""
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full"
         />
 
         {/* Second Image */}
@@ -62,7 +62,7 @@ const Home = () => {
           <img
             src="/hero2.png"
             alt=""
-            className="w-full h-full object-cover"
+            className="w-full h-full"
           />
         </div>
       </section>
